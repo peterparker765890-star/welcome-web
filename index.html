@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080719">
+    <title>LUMINA — A Little World for a Little While</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="loader">
+        <div class="loader-star">✦</div>
+        <p>creating something beautiful...</p>
+    </div>
+
+    <canvas id="stars"></canvas>
+
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+
+    <!-- INTRO -->
+    <section id="intro" class="screen active">
+        <div class="intro-content">
+            <div class="tiny-star">✦</div>
+
+            <p class="eyebrow">A LITTLE WORLD FOR A LITTLE WHILE</p>
+
+            <h1>LUMINA</h1>
+
+            <p class="intro-text">
+                For the next few minutes,<br>
+                forget everything else.
+            </p>
+
+            <button class="primary-btn" id="beginBtn">
+                BEGIN THE JOURNEY
+                <span>→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- NAME -->
+    <section id="nameScreen" class="screen">
+        <div class="glass-card name-card">
+            <div class="moon-small">☾</div>
+
+            <p class="eyebrow">BEFORE WE BEGIN</p>
+
+            <h2>What's your name?</h2>
+
+            <p class="soft-text">
+                Every little journey deserves a name.
+            </p>
+
+            <input
+                type="text"
+                id="nameInput"
+                maxlength="24"
+                autocomplete="off"
+                placeholder="Enter your name..."
+            >
+
+            <button class="primary-btn" id="enterBtn">
+                STEP INSIDE
+                <span>✦</span>
+            </button>
+
+            <p class="error" id="nameError"></p>
+        </div>
+    </section>
+
+    <!-- WELCOME -->
+    <section id="welcome" class="screen">
+        <div class="welcome-content">
+            <div class="welcome-orb"></div>
+
+            <p class="eyebrow">NICE TO MEET YOU</p>
+
+            <h2>Hello, <span id="welcomeName"></span> ✨</h2>
+
+            <p>
+                Come on...<br>
+                let's take a little journey.
+            </p>
+
+            <button class="circle-btn" id="exploreBtn">↓</button>
+        </div>
+    </section>
+
+    <!-- GARDEN -->
+    <section id="garden" class="screen">
+
+        <div class="moon"></div>
+
+        <div class="garden-title">
+            <p class="eyebrow">YOUR LITTLE WORLD</p>
+            <h2 id="gardenName"></h2>
+            <p>Look around. Something may be waiting for you.</p>
+        </div>
+
+        <div class="garden">
+
+            <button class="flower flower-one" data-message="Some beautiful things are meant to be discovered slowly.">
+                <span>✿</span>
+            </button>
+
+            <button class="flower flower-two" data-message="You found a little secret. Keep exploring.">
+                <span>✿</span>
+            </button>
+
+            <button class="flower flower-three" data-message="Maybe this tiny moment was meant to make you smile.">
+                <span>✿</span>
+            </button>
+
+            <button class="butterfly" id="butterfly">🦋</button>
+
+            <div class="lake"></div>
+
+            <div class="grass grass-one"></div>
+            <div class="grass grass-two"></div>
+            <div class="grass grass-three"></div>
+
+        </div>
+
+        <div class="message-box" id="messageBox">
+            <button id="closeMessage">×</button>
+            <p id="messageText"></p>
+        </div>
+
+        <button class="continue-btn" id="gardenContinue">
+            I FOUND SOMETHING ✦
+        </button>
+
+    </section>
+
+    <!-- MOOD -->
+    <section id="mood" class="screen">
+
+        <div class="section-content">
+
+            <p class="eyebrow">A LITTLE QUESTION</p>
+
+            <h2>What feels like you?</h2>
+
+            <p class="soft-text">
+                There is no wrong answer.
+            </p>
+
+            <div class="mood-grid">
+
+                <button class="mood-card" data-mood="Dreamer">
+                    <span>🌙</span>
+                    <strong>Dreamer</strong>
+                    <small>lost in beautiful thoughts</small>
+                </button>
+
+                <button class="mood-card" data-mood="Explorer">
+                    <span>🌊</span>
+                    <strong>Explorer</strong>
+                    <small>always looking for something new</small>
+                </button>
+
+                <button class="mood-card" data-mood="Sunshine">
+                    <span>☀️</span>
+                    <strong>Sunshine</strong>
+                    <small>making ordinary moments brighter</small>
+                </button>
+
+                <button class="mood-card" data-mood="Midnight">
+                    <span>✨</span>
+                    <strong>Midnight</strong>
+                    <small>quiet, thoughtful and mysterious</small>
+                </button>
+
+            </div>
+
+            <div class="mood-result" id="moodResult"></div>
+
+        </div>
+
+    </section>
+
+    <!-- WISH -->
+    <section id="wish" class="screen">
+
+        <div class="wish-stars"></div>
+
+        <div class="section-content">
+
+            <p class="eyebrow">ONE LAST LITTLE THING</p>
+
+            <h2>Make a wish.</h2>
+
+            <p class="soft-text">
+                Think of something you really want.
+            </p>
+
+            <div class="wish-box">
+                <input
+                    id="wishInput"
+                    type="text"
+                    maxlength="100"
+                    placeholder="My wish is..."
+                >
+
+                <button id="wishBtn">MAKE IT A STAR ✦</button>
+            </div>
+
+            <p class="wish-note">
+                Whatever it is, I hope life brings you closer to it.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="screen">
+
+        <div class="sunrise"></div>
+
+        <div class="final-content">
+
+            <p class="eyebrow">AND JUST LIKE THAT...</p>
+
+            <h2 id="finalName"></h2>
+
+            <div class="final-lines">
+
+                <p>
+                    Maybe this was only a few minutes of your day...
+                </p>
+
+                <p>
+                    But I hope it made those minutes<br>
+                    a little brighter.
+                </p>
+
+                <p class="highlight">
+                    Take this smile with you. 😊
+                </p>
+
+                <p>
+                    And whenever life gets a little heavy,<br>
+                    remember that you deserve moments<br>
+                    that feel this light.
+                </p>
+
+            </div>
+
+            <div class="signature">
+                <span>Made with a little imagination</span>
+                <strong>— Sabarish.P</strong>
+            </div>
+
+            <button class="restart-btn" id="restartBtn">
+                EXPERIENCE IT AGAIN ↻
+            </button>
+
+        </div>
+
+    </section>
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
